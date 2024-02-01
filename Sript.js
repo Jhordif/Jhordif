@@ -39,6 +39,11 @@ function calcularFechasAdicionales() {
     // Convertir la fecha de entrada a un objeto Date
     var fechaInicial = new Date(fechaInicio);
 
+        // Verificar si ya hay resultados, y si es así, limpiarlos
+        if (document.getElementById("fechasAdicionales").children.length > 0) {
+          limpiarResultadosAnteriores();
+        }
+
     // Calcular 7 días después para la revisión documentaria
     var fechaRevision = new Date(fechaInicial);
     fechaRevision.setDate(fechaRevision.getDate() + 7);
